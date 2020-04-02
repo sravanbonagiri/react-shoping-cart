@@ -16,23 +16,6 @@ class Products extends React.PureComponent {
       ]
     };
 
-    findProductIndex =(cart, productId) => {
-        return cart.findIndex(p => p.id === productId);
-      };
-    
-      updateProductUnits(cart, product) {
-        const prodIndex = this.findProductIndex(cart, product.id);
-        const updatedrods = [...cart];
-        const existingProd = updatedrods[prodIndex]
-        const updatedUnitsProd = {
-          ...existingProd,
-          units: existingProd.units + product.units
-        };
-    
-        updatedrods[prodIndex] = updatedUnitsProd
-        return updatedrods;
-      }
-
     addToCart(product){
       this.props.addToCartAction(product)
     }
